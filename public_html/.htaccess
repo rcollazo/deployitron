@@ -1,0 +1,14 @@
+php_value	include_path	.:/var/www/deploy.collazo.ws/public_html/lib:/usr/share/pear
+php_value	display_errors	on
+php_value	date.timezone	America/Chicago
+
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{REQUEST_URI} !/maintenance.php$
+#RewriteCond %{REMOTE_ADDR} !^72\.179\.131\.48$
+#RewriteRule ^(.*)$ /maintenance.php [R=302,L]

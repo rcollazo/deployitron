@@ -1,0 +1,16 @@
+<?php
+
+$debug = false;
+
+$id = 'REPLACE_ME';
+$secretKey = 'REPLACE_ME';
+$config = array('high_confidentiality' => true,
+                'enable_ssl' => false);
+
+$script_path = '/path/to/scripts/';
+
+$dbname = 'dbname';
+$dbuser = 'db_user';
+$dbpasswd = 'dbpasswd';
+$dbhost = 'hostname';
+?>

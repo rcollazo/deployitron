@@ -1,0 +1,31 @@
+You will need:
+
+http://code.google.com/p/phprackcloud/
+
+Put it in the public_html/lib directory as phprackcloud.  You can do this
+by running the following command:
+
+svn checkout http://phprackcloud.googlecode.com/svn/trunk/ phprackcloud
+
+Next, copy the lib/globals.php.dist to lib/globals.php and edit the file.
+
+Generate unique values for $id and $secret by running the following command:
+
+pgwen -sy 65 2
+
+Use the values to fill in $id and $secret. Edit the relevant db information.
+
+Save the file.
+
+Import the deploy_db.SCHEMA into your MySQL database.
+
+For reference, the BigOrNot_CookieManager comes from:
+http://bigornot.blogspot.com/2008/06/securing-cookies-php-implementation.html
+
+
+If you have questions, feel free to email me <robert@collazo.ws> or via
+Twitter (@rcollazo).
+
+
+
+

@@ -1,0 +1,122 @@
+-- MySQL dump 10.13  Distrib 5.1.55, for redhat-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: deploy_db
+-- ------------------------------------------------------
+-- Server version	5.1.55-ius
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `flavor_info`
+--
+
+DROP TABLE IF EXISTS `flavor_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `flavor_info` (
+  `id` int(11) NOT NULL,
+  `name` varchar(15) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `flavor_info`
+--
+
+LOCK TABLES `flavor_info` WRITE;
+/*!40000 ALTER TABLE `flavor_info` DISABLE KEYS */;
+INSERT INTO `flavor_info` (`id`, `name`, `count`) VALUES (1,'256 server',101),(2,'512 server',35),(3,'1GB server',34),(4,'2GB server',10),(5,'4GB server',14),(6,'8GB server',5),(7,'15.5GB server',2),(8,'30GB server',0);
+/*!40000 ALTER TABLE `flavor_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `image_info`
+--
+
+DROP TABLE IF EXISTS `image_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `image_info` (
+  `id` int(11) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image_info`
+--
+
+LOCK TABLES `image_info` WRITE;
+/*!40000 ALTER TABLE `image_info` DISABLE KEYS */;
+INSERT INTO `image_info` (`id`, `name`, `count`) VALUES (110,'Red Hat Enterprise Linux 5.5',0),(111,'Red Hat Enterprise Linux 6',0),(114,'CentOS 5.6',0),(118,'CentOS 6.0',0);
+/*!40000 ALTER TABLE `image_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `software_info`
+--
+
+DROP TABLE IF EXISTS `software_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `software_info` (
+  `id` int(11) NOT NULL,
+  `name` varchar(15) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `software_info`
+--
+
+LOCK TABLES `software_info` WRITE;
+/*!40000 ALTER TABLE `software_info` DISABLE KEYS */;
+INSERT INTO `software_info` (`id`, `name`, `count`) VALUES (1,'magento',14),(2,'wordpress',180),(3,'Drupal-7.0',9);
+/*!40000 ALTER TABLE `software_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_info`
+--
+
+DROP TABLE IF EXISTS `user_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) NOT NULL COMMENT 'Rackspace Cloud Username',
+  `count` int(11) NOT NULL COMMENT 'Number of times the user has generated a server',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_IDX` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping routines for database 'deploy_db'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-04-18 18:32:41
